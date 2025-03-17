@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/03/17 13:55:17 by dabierma          #+#    #+#              #
+#    Updated: 2025/03/17 17:29:51 by dabierma         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = fractol
 MLX_DIR = mlx
 # Compiler
@@ -10,7 +22,7 @@ LIBRARIES = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit -lm
 # Header files
 HEADERS = fractol.h
 # Source files
-SRCS = main.c init.c string_utils.c
+SRCS = main.c init.c string_utils.c render.c math_utils.c
 # Object files (replace .c with .o). Compiling source files to object files
 OBJS = $(SRCS:.c=.o)
 # Delivery files

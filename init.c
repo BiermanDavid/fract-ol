@@ -1,9 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/17 13:55:05 by dabierma          #+#    #+#             */
+/*   Updated: 2025/03/17 18:23:34 by dabierma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 static void    malloc_error(void)
 {
     perror("Memory Allocation Failed");
     exit(EXIT_FAILURE);
+}
+
+static void	events_init(t_fractal *fractal)
+{
+	mlx_hook(fractal->mlx_window,
+			KeyPress,
+			KeyPressMask,
+			Key_handler,
+			fractal);
+	mlx_hook(fractal->mlx_window,
+			ButtonPress,
+			ButtonPressMask,
+			Mouse_handler,
+			fractal);
+	mlx_hook(fractal->mlx_window,
+			DestroyNotify,
+			StructureNotifyMask,
+			close_handler,
+			fractal);
+}
+
+void	data_init(t_fractal *fractal)
+{
+	fractal->escape_value = 4;
+	fractal->iterations_definition = 42;
 }
 
 void    fractal_init(t_fractal *fractal)
@@ -36,5 +73,5 @@ void    fractal_init(t_fractal *fractal)
                                                 &fractal->img.endian);                     
     //event initialization
     //data initialization
-    //data_init(fractal);                                               
+    data_init(fractal);                                               
 }
