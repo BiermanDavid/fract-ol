@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:54:58 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/18 05:25:30 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:14:09 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIDTH   800
 # define HEIGHT  800
-# define MAX_ITERATION 80
+# define MAX_ITERATION 150
 # define ZOOM 1.1618
 # define ESC 53
 # define RIGHT_CLICK 2
@@ -75,9 +75,9 @@ void		julia_setup(t_fractal *fractal, double c[2]);
 int			julia(t_fractal *fractal, double c_re, double c_im);
 // int			julia(double z_r, double z_i, double c_r, double c_i);
 // render.c
-void		render_fractal(t_fractal *fractal, int iteration);
-void		fill_pixels(t_fractal *fractal, int x, int y, int color);
-int			zoom(int keycode, double x, double y, t_fractal *fractal);
+void		render_fractal(t_fractal *fract, int iteration);
+void		fill_pixels(t_fractal *fract, int x, int y, int color);
+int			zoom(int keycode, double x, double y, t_fractal *fract);
 // keypress hooks/events
 int			mouse_handler(int keycode, int x, int y, t_fractal *fractal);
 int			key_handler(int keysym, t_fractal *fractal);
