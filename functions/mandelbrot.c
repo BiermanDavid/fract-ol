@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 14:09:07 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/18 01:17:56 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/18 05:22:08 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,27 @@ void	define_bounds(t_fractal *fractal)
 		return ;
 	if (fractal->type == 2)
 	{
-		fractal->max_r = 1.5;
-		fractal->min_r = -1.5;
-		fractal->min_i = -1.5;
+		fractal->min_r = -2.0;
+		fractal->max_r = 2.0;
+		fractal->min_i = -2.0;
+		fractal->max_i = 2.0;
 	}
 	else
 	{
 		fractal->max_r = 1;
 		fractal->min_r = -1.9;
 		fractal->min_i = -1.4;
+		fractal->max_i += (fractal->max_r - fractal->min_r) * HEIGHT / WIDTH;
 	}
-	fractal->max_i += (fractal->max_r - fractal->min_r) * HEIGHT / WIDTH;
 	color_range(fractal);
 }
 /**
  * Mandelbrot Formula:
- * Complex nbr: c = c_real + i * c_imaginary
+ * Complex nbr: 𝑐 = 𝑐real + 𝑖⋅𝑐imaginary
  * Check if complex number stays within bounds or escapes
  * updated iteratively in loop.
  */
+
 int	mandelbrot(double c_real, double c_imaginary)
 {
 	int		n;

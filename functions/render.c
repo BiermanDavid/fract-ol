@@ -6,18 +6,18 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:55:22 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/18 01:32:44 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/18 05:30:38 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-static int	choose_fractal(t_fractal *fractal, double c_real, double c_yaginary)
+static int choose_fractal(t_fractal *fractal, double c_real, double c_imaginary)
 {
 	if (fractal->type == 1)
-		return (mandelbrot(c_real, c_yaginary));
-	// else if (fractal->type == 2)
-	// 	return(julia(fractal, c_real, c_yaginary));
+		return (mandelbrot(c_real, c_imaginary));
+	else if (fractal->type == 2)
+		return (julia(fractal, c_real, c_imaginary));
 	return (1);
 }
 

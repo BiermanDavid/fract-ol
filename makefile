@@ -6,7 +6,7 @@
 #    By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/17 13:55:17 by dabierma          #+#    #+#              #
-#    Updated: 2025/03/18 00:02:40 by dabierma         ###   ########.fr        #
+#    Updated: 2025/03/18 01:49:34 by dabierma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ functions/string_utils.c \
 functions/render.c \
 functions/mandelbrot.c \
 functions/colors.c \
-functions/events.c
+functions/events.c \
+functions/julia.c
 # Object files
 OBJS = $(SRCS:.c=.o)
 # Delivery files
