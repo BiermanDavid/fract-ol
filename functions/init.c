@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:55:05 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/18 00:22:51 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/21 22:00:52 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,23 +35,23 @@ void	initialize_graphic_environment(char **argv, t_fractal *fractal)
 
 void	its_not_that_hard(void)
 {
-	putstr_fd("#########################################", STDOUT_FILENO);
-	putstr_fd("####################################\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\tListen... Its not that hard...\t\t\t", STDOUT_FILENO);
-	putstr_fd("    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t\t\t\t\t\t\t    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\tTry with Mandelbrot:\t\t\t\t\t", STDOUT_FILENO);
-	putstr_fd("    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t./fractol Mandelbrot\t\t\t\t", STDOUT_FILENO);
-	putstr_fd("    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t\t\t\t\t\t\t    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\tOr try with Julia:\t\t\t\t\t", STDOUT_FILENO);
-	putstr_fd("    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t./fractol Julia <nbr> <nbr> \t\t\t", STDOUT_FILENO);
-	putstr_fd("    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\tJust numbers... not \"<>\"\t\t\t    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t\t\t\t\t\t\t    #\n", STDOUT_FILENO);
-	putstr_fd("#\t\t\t\t\t\t   (Case Sensitive... Duh?) #\n", STDOUT_FILENO);
-	putstr_fd("#########################################", STDOUT_FILENO);
-	putstr_fd("####################################", STDOUT_FILENO);
+	putstr_fd("╔════════════════════════════════════════", STDOUT_FILENO);
+	putstr_fd("═══════════════════════════════════╗\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\tListen... Its not that hard...\t\t\t", STDOUT_FILENO);
+	putstr_fd("    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t\t\t\t\t\t\t    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\tTry with Mandelbrot:\t\t\t\t\t", STDOUT_FILENO);
+	putstr_fd("    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t./fractol Mandelbrot\t\t\t\t", STDOUT_FILENO);
+	putstr_fd("    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t\t\t\t\t\t\t    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\tOr try with Julia:\t\t\t\t\t", STDOUT_FILENO);
+	putstr_fd("    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t./fractol Julia <nbr> <nbr> \t\t\t", STDOUT_FILENO);
+	putstr_fd("    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\tJust numbers... not \"<>\"\t\t\t    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t\t\t\t\t\t\t    ║\n", STDOUT_FILENO);
+	putstr_fd("║\t\t\t\t\t\t   (Case Sensitive... Duh?) ║\n", STDOUT_FILENO);
+	putstr_fd("╚════════════════════════════════════════", STDOUT_FILENO);
+	putstr_fd("═══════════════════════════════════╝\n", STDOUT_FILENO);
 }
