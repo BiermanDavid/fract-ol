@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:55:29 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/21 21:58:48 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:40:57 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,32 +71,4 @@ int	ft_isdigit(int c)
 		return (0);
 	}
 	return (1);
-}
-
-double	atodbl(char *s)
-{
-	long	integer;
-	double	fraction;
-	double	pow;
-	int		sign;
-
-	integer = 0;
-	fraction = 0;
-	sign = +1;
-	pow = 1.0;
-	while ((*s >= 9 && *s <= 13) || *s == ' ')
-		s++;
-	while (*s == '+' || *s == '-')
-		if (*s++ == '-')
-			sign = -sign;
-	while (*s != '.' && *s)
-		integer = (integer * 10) + (*s++ - 48);
-	if (*s == '.')
-		s++;
-	while (*s)
-	{
-		pow /= 10;
-		fraction += (*s++ - 48) * pow;
-	}
-	return ((integer + fraction) * sign);
 }

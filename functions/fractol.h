@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:54:58 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/21 21:59:35 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/24 16:42:52 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int			ft_strncmp(char *s1, char *s2, int n);
 void		putstr_fd(char *str, int fd);
 int			ft_atoi(const char *str);
 int			ft_isdigit(int c);
-double		atodbl(char *s);
 // init.c
 void		initialize_graphic_environment(char **argv, t_fractal *fractal);
 void		its_not_that_hard(void);
@@ -71,13 +70,11 @@ void		its_not_that_hard(void);
 void		define_bounds(t_fractal *fractal);
 int			mandelbrot(double c_real, double c_imaginary);
 // julia.c
-void		julia_setup(t_fractal *fractal, double c[2]);
 int			julia(t_fractal *fractal, double c_re, double c_im);
-// int			julia(double z_r, double z_i, double c_r, double c_i);
 // render.c
-void		render_fractal(t_fractal *fractal, int iteration);
-void		fill_pixels(t_fractal *fractal, int x, int y, int color);
-int			zoom(int keycode, double x, double y, t_fractal *fractal);
+void		render_fractal(t_fractal *fract, int iteration);
+void		fill_pixels(t_fractal *fract, int x, int y, int color);
+int			zoom(int keycode, double x, double y, t_fractal *t_fract);
 // keypress hooks/events
 int			mouse_handler(int keycode, int x, int y, t_fractal *fractal);
 int			key_handler(int keysym, t_fractal *fractal);
