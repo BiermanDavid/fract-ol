@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:54:58 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/24 16:42:52 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/24 21:35:39 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # define WIDTH   800
 # define HEIGHT  800
-# define MAX_ITERATION 80
+# define MAX_ITERATION 42
 # define ZOOM 1.1618
 # define ESC 53
 # define RIGHT_CLICK 2
@@ -65,6 +65,7 @@ int			ft_atoi(const char *str);
 int			ft_isdigit(int c);
 // init.c
 void		initialize_graphic_environment(char **argv, t_fractal *fractal);
+void		mlx_fill_pixel(t_fractal *fract, int x, int y, int color);
 void		its_not_that_hard(void);
 // mandelbrot.c
 void		define_bounds(t_fractal *fractal);
@@ -73,7 +74,6 @@ int			mandelbrot(double c_real, double c_imaginary);
 int			julia(t_fractal *fractal, double c_re, double c_im);
 // render.c
 void		render_fractal(t_fractal *fract, int iteration);
-void		fill_pixels(t_fractal *fract, int x, int y, int color);
 int			zoom(int keycode, double x, double y, t_fractal *t_fract);
 // keypress hooks/events
 int			mouse_handler(int keycode, int x, int y, t_fractal *fractal);

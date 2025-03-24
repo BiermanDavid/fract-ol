@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:55:22 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/24 16:42:19 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/24 21:32:39 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,6 @@ int	zoom(int keycode, double x, double y, t_fractal *fract)
 	return (0);
 }
 
-void	fill_pixels(t_fractal *fract, int x, int y, int color)
-{
-	char	*dest;
-
-	if (!fract)
-		return ;
-	dest = fract->address + (y * fract->line_len + x * (fract->bpp / 8));
-	*(unsigned int *) dest = color;
-}
-
 void	render_fractal(t_fractal *fract, int iteration)
 {
 	double	c_x;
@@ -72,9 +62,9 @@ void	render_fractal(t_fractal *fract, int iteration)
 			c_y = fract->min_i + y * (fract->max_i - fract->min_i) / HEIGHT;
 			iteration = choose_fractal(fract, c_x, c_y);
 			if (iteration == -1)
-				fill_pixels(fract, x, y, 0x00000000);
+				mlx_fill_pixel(fract, x, y, 0x00000000);
 			else
-				fill_pixels(fract, x, y, fract->palette[iteration]);
+				mlx_fill_pixel(fract, x, y, fract->palette[iteration]);
 			y++;
 		}
 		x++;

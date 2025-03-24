@@ -6,7 +6,7 @@
 /*   By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 13:55:05 by dabierma          #+#    #+#             */
-/*   Updated: 2025/03/21 22:00:52 by dabierma         ###   ########.fr       */
+/*   Updated: 2025/03/24 21:32:50 by dabierma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,14 @@ void	its_not_that_hard(void)
 	putstr_fd("║\t\t\t\t\t\t   (Case Sensitive... Duh?) ║\n", STDOUT_FILENO);
 	putstr_fd("╚════════════════════════════════════════", STDOUT_FILENO);
 	putstr_fd("═══════════════════════════════════╝\n", STDOUT_FILENO);
+}
+
+void	mlx_fill_pixel(t_fractal *fract, int x, int y, int color)
+{
+	char	*dest;
+
+	if (!fract)
+		return ;
+	dest = fract->address + (y * fract->line_len + x * (fract->bpp / 8));
+	*(unsigned int *) dest = color;
 }

@@ -6,7 +6,7 @@
 #    By: dabierma <dabierma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/17 13:55:17 by dabierma          #+#    #+#              #
-#    Updated: 2025/03/21 22:01:48 by dabierma         ###   ########.fr        #
+#    Updated: 2025/03/24 21:34:59 by dabierma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,10 +41,6 @@ DELIVERY_FILES = $(NAME)
 .PHONY: all clean fclean re valgrind help
 # Default target
 all: $(NAME)
-# Create the library
-$(NAME): $(OBJS)
-	@make -C $(MLX_DIR) CFLAGS="$(MLX_CFLAGS)" > /dev/null 2>&1
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(LIBRARIES)
 # Rule for creating object files
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
